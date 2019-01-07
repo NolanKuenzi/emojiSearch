@@ -20,3 +20,6 @@ npm-debug.log*
 
 # Jest Coverage
 coverage
+
+# misc
+.DS_Store
