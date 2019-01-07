@@ -1,0 +1,56 @@
+h1 {
+  position: relative;
+  bottom: 0.1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#hDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#inputDiv {
+  text-align: center;
+  margin-top: 5em;
+
+}
+input {
+  height: 1.5em;
+  width: 15em;
+  position: relative;
+  bottom: 2em;
+}
+
+#emojiDiv {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  text-align: left;
+  margin-left: -2em;
+  margin-right: 0.5em;
+  margin-top: -1.5em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 14px;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
+  padding-top: 2em;
+}
+
+#emojiSym {
+  margin-right: 0.5em;
+}
+
+#spanText {
+  float: right;
+  position: relative;
+  top: 0.2em;
+  color: white;
+}
