@@ -15,6 +15,7 @@ class App extends React.Component {
     this.setState({
       emojiDisplay: input.map(item => (
         <CopyToClipboard
+          id={item.symbol}
           text={item.symbol}
           key={item.title + Math.floor(Math.random() * Math.floor(5000))}
         >
