@@ -15,7 +15,7 @@ class App extends React.Component {
     this.setState({
       emojiDisplay: input.map(item => (
         <CopyToClipboard
-          id={item.symbol}
+          id={item.title}
           text={item.symbol}
           key={item.title + Math.floor(Math.random() * Math.floor(5000))}
         >
@@ -32,6 +32,18 @@ class App extends React.Component {
     });
   };
 
+  changeDisplay = event => {
+    if (event.target.value === '') {
+      this.setDisplay(emojisList);
+      return;
+    }
+    let findEmoji = [...emojisList];
+    findEmoji = findEmoji.filter(
+      item => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1,
+    );
+    this.setDisplay(findEmoji);
+  };
+
   mouseOverFunc = event => {
     const node = document.createElement('span');
     node.setAttribute('id', 'spanText');
@@ -44,18 +56,6 @@ class App extends React.Component {
   mouseLeaveFunc = event => {
     event.target.removeChild(event.target.lastChild);
     event.target.style.backgroundColor = 'white';
-  };
-
-  changeDisplay = event => {
-    if (event.target.value === '') {
-      this.setDisplay(emojisList);
-      return;
-    }
-    let findEmoji = [...emojisList];
-    findEmoji = findEmoji.filter(
-      item => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1,
-    );
-    this.setDisplay(findEmoji);
   };
 
   render() {
