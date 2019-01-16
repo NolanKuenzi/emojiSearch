@@ -1,7 +1,7 @@
 import React from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import emojisList from './emojisList.json';
 import Header from './header';
+import emojisList from './emojisList.json';
 
 class App extends React.Component {
   componentDidMount() {
@@ -16,6 +16,7 @@ class App extends React.Component {
       emojiDisplay: input.map(item => (
         <CopyToClipboard
           id={item.title}
+          data-testid={item.symbol}
           text={item.symbol}
           key={item.title + Math.floor(Math.random() * Math.floor(5000))}
         >
@@ -47,6 +48,7 @@ class App extends React.Component {
   mouseOverFunc = event => {
     const node = document.createElement('span');
     node.setAttribute('id', 'spanText');
+    node.setAttribute('data-testid', 'testSpanText');
     const copyText = document.createTextNode('Click to copy emoji');
     node.appendChild(copyText);
     event.target.appendChild(node);
@@ -61,7 +63,7 @@ class App extends React.Component {
   render() {
     const { ...display } = this.state;
     return (
-      <div>
+      <div data-testid="headerDiv">
         <Header
           emoji1={emojisList[235].symbol}
           emoji2={emojisList[77].symbol}
@@ -71,12 +73,13 @@ class App extends React.Component {
         <div id="inputDiv">
           <input
             id="input"
+            data-testid="input"
             type="text"
             placeholder="Search for an Emoji"
             onChange={this.changeDisplay}
           />
           <div id="emojiDiv">
-            <ul>{display.emojiDisplay}</ul>
+            <ul data-testid="emojiUl">{display.emojiDisplay}</ul>
           </div>
         </div>
       </div>
