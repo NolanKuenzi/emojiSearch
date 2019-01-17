@@ -1,7 +1,8 @@
 import React from 'react';
-import { render, fireEvent } from 'react-testing-library';
+import { cleanup, render, fireEvent } from 'react-testing-library';
 import App from '../src/app';
 
+afterEach(cleanup);
 describe('<App /> component', () => {
   it('Displays the inital 25 emojis after the component mounts', () => {
     const { getByTestId } = render(<App />);
@@ -25,5 +26,5 @@ describe('<App /> component', () => {
     fireEvent.mouseOver(Grin);
     const spanText = selectElement('testSpanText');
     expect(spanText.innerHTML).toBe('Click to copy emoji');
-  });
+  }); 
 });
