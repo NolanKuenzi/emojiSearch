@@ -20,7 +20,7 @@ describe('<App /> component', () => {
     fireEvent.change(input, { target: { value: 'eggd' } });
     expect(emojiList.children.length).toBe(0);
   });
-  test('Hovering over an emoji displays the text, "Click to copy emoji" and removing the mouse removes the text.', () => {
+  test('Hovering over an emoji displays the text, "Click to copy emoji', () => {
     const { getByTestId: selectElement } = render(<App />);
     const Grin = selectElement('😁');
     fireEvent.mouseOver(Grin);
