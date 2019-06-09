@@ -1,5 +1,5 @@
 {
-  "name": "emojiSearch",
+  "name": "emoji_search",
   "version": "1.0.0",
   "description": "A react boiler plate",
   "main": "src/index.js",
