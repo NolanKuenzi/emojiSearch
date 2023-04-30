@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "react": "^16.5.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.2"
